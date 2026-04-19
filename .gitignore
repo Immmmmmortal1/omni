@@ -1,0 +1,32 @@
+node_modules
+.next
+.env*.local
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+
+# Python server (under /server)
+server/.venv/
+server/__pycache__/
+server/*.pyc
+# dlib landmarks model — ~100 MB, not suitable for git
+server/shape_predictor_68_face_landmarks.dat
+
+# onnxruntime-web runtime bundle — ~36 MB, copied from node_modules on postinstall
+public/ort/
+
+# Uploaded / debug base images and coord caches under server/ (regenerated on demand)
+server/Screenshot_*.png
+server/*.coords.json
+
+# server-v2 (SAM2 backend) — venv + ~150 MB checkpoint, not suitable for git
+server-v2/.venv/
+server-v2/__pycache__/
+server-v2/*.pyc
+server-v2/checkpoints/
+
+# Large / unused ONNX models — yolo26n.onnx + yolo26n-seg.onnx are tracked
+public/models/rf-detr-nano.onnx
+public/models/yolov8n.onnx
+
+certificates/
