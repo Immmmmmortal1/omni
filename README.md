@@ -8,6 +8,9 @@ Hey, you! 👋 Welcome to **Omni**, a joyful little open-source experiment that 
 
 It's silly. It's warm. It's the kind of magic we wanted to exist, so we built it. We hope you love hacking on it as much as we loved making it.
 
+<img width="1509" height="772" alt="Screenshot 2026-04-19 at 8 13 49 am" src="https://github.com/user-attachments/assets/761640f0-494b-41f8-b4ce-e06d063efd04" />
+
+
 ---
 
 ## ✨ What's inside
