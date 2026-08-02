@@ -112,6 +112,24 @@ body::before {
   75% { transform: rotate(8deg); }
 }
 
+/* ObjectLimbs — swing delta only. Rest pose is an outer wrapper rotate. */
+@keyframes limb-arm-l {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-14deg); }
+}
+@keyframes limb-arm-r {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(14deg); }
+}
+@keyframes limb-leg-l {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-10deg); }
+}
+@keyframes limb-leg-r {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(10deg); }
+}
+
 .blob {
   position: absolute;
   border-radius: 9999px;

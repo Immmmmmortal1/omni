@@ -17,6 +17,7 @@ import {
   type LipSyncState,
   type MouthShape,
 } from "@/components/face-voice";
+import { ObjectLimbs } from "@/components/object-limbs";
 import { SpeechBubble } from "@/components/speech-bubble";
 import { CapturePopup, type CaptureItem } from "@/components/capture-popup";
 import {
@@ -577,6 +578,13 @@ type TrackUI = {
   shape: MouthShape;
   // Small lean (deg) in the direction the box is moving — UX hint only.
   tilt: number;
+  // Object bbox in element px, expressed relative to the face anchor
+  // (left/top). Drives ObjectLimbs so arms/legs grow from the real
+  // object, not from the face center.
+  bodyOffX: number;
+  bodyOffY: number;
+  bodyW: number;
+  bodyH: number;
   // Lifecycle — set by tap/speak flow, not the RAF.
   caption: string | null;
   thinking: boolean;
@@ -2312,6 +2320,17 @@ export function Tracker() {
           if (!el) return ui;
           const left = el.clientX - rect.left;
           const top = el.clientY - rect.top;
+          // Body box in element space → offsets from the face anchor so
+          // ObjectLimbs can share this track's opacity/transform group.
+          const bodyVp = sourceBoxToElement(renderBox, v);
+          const bodyOffX = bodyVp
+            ? Math.round((bodyVp.left + bodyVp.width / 2 - left) * 10) / 10
+            : 0;
+          const bodyOffY = bodyVp
+            ? Math.round((bodyVp.top + bodyVp.height / 2 - top) * 10) / 10
+            : 0;
+          const bodyW = bodyVp ? Math.round(bodyVp.width * 10) / 10 : 0;
+          const bodyH = bodyVp ? Math.round(bodyVp.height * 10) / 10 : 0;
           const minSide = Math.min(renderBox.w, renderBox.h);
           // Shrink face for elongated silhouettes so it fits the MINOR
           // axis, not the bbox min. orientRatio = 1 → no shrink; ratio = 2
@@ -2356,7 +2375,11 @@ export function Tracker() {
             ui.scale === scale &&
             ui.opacity === opacity &&
             ui.shape === shape &&
-            ui.tilt === tilt
+            ui.tilt === tilt &&
+            ui.bodyOffX === bodyOffX &&
+            ui.bodyOffY === bodyOffY &&
+            ui.bodyW === bodyW &&
+            ui.bodyH === bodyH
           ) {
             return ui;
           }
@@ -2369,6 +2392,10 @@ export function Tracker() {
             opacity,
             shape,
             tilt,
+            bodyOffX,
+            bodyOffY,
+            bodyW,
+            bodyH,
           };
         });
         return changed ? next : prev;
@@ -3890,6 +3917,10 @@ export function Tracker() {
           opacity: 0,
           shape: "X",
           tilt: 0,
+          bodyOffX: 0,
+          bodyOffY: 0,
+          bodyW: 0,
+          bodyH: 0,
           caption: null,
           thinking: false,
           speaking: false,
@@ -4358,6 +4389,17 @@ export function Tracker() {
               opacity: t.opacity,
             }}
           >
+            {/* Limbs first (behind face): hang off the object bbox so a
+                locked cup/bottle reads as a living character, not just a
+                floating head. */}
+            <ObjectLimbs
+              offsetX={t.bodyOffX}
+              offsetY={t.bodyOffY}
+              width={t.bodyW}
+              height={t.bodyH}
+              tilt={t.tilt}
+              speaking={t.speaking}
+            />
             {/* Face: centered on the anchor (0, 0). Outer div uses negative
                 left/top to plant the element's center exactly at (0,0);
                 inner div scales+rotates around its own 50%/50% origin.
@@ -4371,6 +4413,7 @@ export function Tracker() {
                 top: `${-FACE_VOICE_HEIGHT / 2}px`,
                 width: `${FACE_VOICE_WIDTH}px`,
                 height: `${FACE_VOICE_HEIGHT}px`,
+                zIndex: 1,
               }}
             >
               <div
