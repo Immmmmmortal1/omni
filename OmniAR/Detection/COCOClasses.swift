@@ -18,6 +18,16 @@ enum COCOClasses {
     /// Class ids to exclude from "bring to life" (people are not inanimate objects).
     static let excludedLabels: Set<String> = ["person"]
 
+    /// Large support surfaces that often swallow taps aimed at cups/bottles sitting on them.
+    /// When a smaller non-surface also contains the tap, prefer that object (never the table).
+    static let supportSurfaceLabels: Set<String> = [
+        "dining table", "bed", "couch", "bench",
+    ]
+
+    static func isSupportSurface(_ label: String) -> Bool {
+        supportSurfaceLabels.contains(label.lowercased())
+    }
+
     static func label(forIdentifier identifier: String) -> String {
         // Vision may return "label" or "LABEL" depending on model metadata.
         let cleaned = identifier

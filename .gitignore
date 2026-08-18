@@ -3,3 +3,6 @@ DerivedData/
 *.xcuserstate
 xcuserdata/
 .DS_Store
+Secrets.xcconfig
+.spm-cache/
+.dev-flow/sessions/

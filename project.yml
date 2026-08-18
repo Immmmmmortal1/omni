@@ -10,20 +10,27 @@ settings:
     SWIFT_VERSION: "5.0"
     TARGETED_DEVICE_FAMILY: "1,2"
     IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+packages: {}
 targets:
   OmniAR:
     type: application
     platform: iOS
     deploymentTarget: "17.0"
+    configFiles:
+      Debug: Secrets.xcconfig
+      Release: Secrets.xcconfig
     sources:
       - path: OmniAR
         excludes:
           - "Models/**"
-      - path: OmniAR/Models/YOLOv3TinyInt8LUT.mlmodel
+          - "Resources/Decals/**"
+      - path: OmniAR/Models/yolo11s.mlpackage
         buildPhase: sources
     resources:
-      - path: OmniAR/Models/YOLOv3TinyInt8LUT.mlmodel
+      - path: OmniAR/Models/yolo11s.mlpackage
         buildPhase: sources
+      # Explicit so PNG sequences are copied even if source-glob misses them.
+      - path: OmniAR/Resources/DecalFlat
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.omni.livingobjects
@@ -51,3 +58,5 @@ targets:
           - arkit
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
+        DEEPSEEK_API_KEY: "$(DEEPSEEK_API_KEY)"
+        DEEPSEEK_MODEL: "$(DEEPSEEK_MODEL)"

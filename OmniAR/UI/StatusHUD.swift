@@ -4,6 +4,7 @@ struct StatusHUD: View {
     let detectionCount: Int
     let statusText: String
     let livingCount: Int
+    var isLocked: Bool = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -32,7 +33,7 @@ struct StatusHUD: View {
                 Spacer()
 
                 VStack(alignment: .trailing, spacing: 6) {
-                    metricChip(title: "detect", value: "\(detectionCount)")
+                    metricChip(title: isLocked ? "locked" : "detect", value: isLocked ? "off" : "\(detectionCount)")
                     metricChip(title: "alive", value: "\(livingCount)")
                 }
             }
@@ -41,7 +42,7 @@ struct StatusHUD: View {
 
             Spacer()
 
-            Text("tap an object to bring it alive")
+            Text(isLocked ? "tap empty or Esc to clear" : "tap an object to stick a face on it")
                 .font(.system(size: 15, weight: .semibold, design: .rounded))
                 .foregroundStyle(.white)
                 .padding(.horizontal, 16)
@@ -72,6 +73,6 @@ struct StatusHUD: View {
 #Preview {
     ZStack {
         Color.black.ignoresSafeArea()
-        StatusHUD(detectionCount: 3, statusText: "tap an object to bring it alive", livingCount: 1)
+        StatusHUD(detectionCount: 3, statusText: "tap an object to stick a face on it", livingCount: 1, isLocked: false)
     }
 }

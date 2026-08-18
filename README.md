@@ -10,17 +10,18 @@ Bundle ID: `com.omni.livingobjects` · Product: **OmniAR**
 Camera frames (ARSession)
         │
         ▼
- ObjectDetector  ── Vision VNCoreMLRequest ──► YOLOv3TinyInt8LUT.mlmodel
-        │                                         (Core ML, int8 LUT)
+ ObjectDetector  ── Vision VNCoreMLRequest ──► yolo11s.mlpackage
+        │                                         (Ultralytics YOLO11s + NMS)
         ▼
  VNRecognizedObjectObservation → DetectedObject (label, conf, bbox)
         │
         ▼
  LivingObjectSystem  ←── tap (UIKit coords → normalized)
         │  pick smallest containing box
-        │  raycast / estimated plane
+        │  project box center → surface (scene depth / raycast)
+        │  lock track + IoU rematch each detect frame
         ▼
- AnchorEntity + CharacterEntityFactory (pink face + limbs, idle sway)
+ AnchorEntity glued to object + CharacterEntityFactory (billboard face)
         │
         ▼
  ARLivingView (RealityKit ARView) + StatusHUD (SwiftUI overlay)
@@ -30,12 +31,14 @@ Camera frames (ARSession)
 |--------|------|
 | `ObjectDetector` | Loads the bundled YOLO Core ML model, runs Vision each few frames, maps COCO-ish labels, excludes `person`. |
 | `COCOClasses` | 80-class label list + exclusion helpers. |
+| `DetectionMatch` | IoU + same-class rematching so a locked face follows its object. |
+| `SurfaceProjector` | Box-center → world hit via scene depth (LiDAR) or plane raycast / feature-point depth. |
 | `ARLivingView` | `UIViewRepresentable` hosting `ARView`, world tracking, tap gesture, session delegate. |
-| `LivingObjectSystem` | Shared `@MainActor` state: detections, tap → raycast → spawn character anchors. |
-| `CharacterEntityFactory` | RealityKit meshes (sphere face, plane accent, capsule-like limbs) + idle bob/sway. |
+| `LivingObjectSystem` | Locks characters onto detections; continuously reprojects + billboards while the object stays in view. |
+| `CharacterEntityFactory` | RealityKit meshes (sphere face, plane accent, limbs) + idle sway on an inner body node. |
 | `StatusHUD` | “omni” brand, detection/alive counts, instruction line. |
 
-Detection uses the AR frame’s `capturedImage` (`CVPixelBuffer`). Placement uses `ARView.raycast` (estimated planes), with a camera-forward fallback when raycast misses.
+Detection uses the AR frame’s `capturedImage` (`CVPixelBuffer`). Placement pins to the **detection box center** on a real surface (scene depth when available), then tracks that object until it leaves frame.
 
 ## Requirements
 
@@ -72,9 +75,13 @@ xcodebuild -scheme OmniAR \
 
 ## Model
 
-`OmniAR/Models/YOLOv3TinyInt8LUT.mlmodel` is Apple’s tiny YOLOv3 (int8 LUT) trained on COCO-style classes. Xcode compiles it to `.mlmodelc` and can emit a `YOLOv3TinyInt8LUT` Swift class. `ObjectDetector` prefers that class and falls back to loading `mlmodelc` from the bundle.
+`OmniAR/Models/yolo11s.mlpackage` is **Ultralytics YOLO11s** (COCO, Core ML with embedded NMS) from the official [yolo-ios-app v8.3.0 release](https://github.com/ultralytics/yolo-ios-app/releases/tag/v8.3.0). Xcode compiles it to `.mlmodelc`. `ObjectDetector` loads that bundle with the correct AR frame **Vision orientation** (portrait back camera → `.right`).
 
-Replace or upgrade the model by swapping the file under `OmniAR/Models/` and regenerating with XcodeGen if the filename changes.
+Detection scores the full camera frame while hunting. After a successful pin, YOLO **stops** and the face stays on a **world-fixed** `AnchorEntity`. Re-download:
+
+```bash
+bash scripts/download-yolo11n.sh yolo11s
+```
 
 ## Privacy keys
 
