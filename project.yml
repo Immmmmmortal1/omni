@@ -41,11 +41,12 @@ targets:
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
         INFOPLIST_KEY_NSCameraUsageDescription: "OmniAR uses the camera for AR world tracking and object detection."
         INFOPLIST_KEY_NSMicrophoneUsageDescription: "OmniAR may use the microphone for future voice interaction."
+        INFOPLIST_KEY_NSLocalNetworkUsageDescription: "OmniAR (Debug) exposes a local debug bridge for AI-assisted inspection."
         CODE_SIGN_STYLE: Automatic
         CURRENT_PROJECT_VERSION: "1"
         MARKETING_VERSION: "1.0"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        DEVELOPMENT_TEAM: ""
+        DEVELOPMENT_TEAM: "S5T9698YCM"
         COREML_CODEGEN_LANGUAGE: Swift
         COREML_COMPILER_CONTAINER: bundle-resources
     info:
@@ -54,6 +55,7 @@ targets:
         UILaunchScreen: {}
         NSCameraUsageDescription: "OmniAR uses the camera for AR world tracking and object detection."
         NSMicrophoneUsageDescription: "OmniAR may use the microphone for future voice interaction."
+        NSLocalNetworkUsageDescription: "OmniAR (Debug) exposes a local debug bridge for AI-assisted inspection."
         UIRequiredDeviceCapabilities:
           - arkit
         UISupportedInterfaceOrientations:

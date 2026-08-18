@@ -24,6 +24,8 @@
 	<string>$(DEEPSEEK_MODEL)</string>
 	<key>NSCameraUsageDescription</key>
 	<string>OmniAR uses the camera for AR world tracking and object detection.</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>OmniAR (Debug) exposes a local debug bridge for AI-assisted inspection.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>OmniAR may use the microphone for future voice interaction.</string>
 	<key>UILaunchScreen</key>

@@ -7,28 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05F58F6D5FFD4A43ABE76E30 /* LookDebugBridgeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E5781447EECDD56DB1EB4 /* LookDebugBridgeRouter.swift */; };
+		22C456EFB3BDA36B43E76A0C /* LookDebugPageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0FDF7B8FC66F2C040BF469 /* LookDebugPageProvider.swift */; };
+		25EE7C67BFAD3342855713A9 /* LookDebugActionExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D48EC2F0FB5E8C91E5C89F1 /* LookDebugActionExecutor.swift */; };
 		2756797E2B71A328D794ADC9 /* ObjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D295563871C8E0729475571 /* ObjectDetector.swift */; };
 		2BE7ACFC72BE09979FC6E7C7 /* omni_creature.riv in Resources */ = {isa = PBXBuildFile; fileRef = AD2E01867A4CD909FD7E6891 /* omni_creature.riv */; };
 		2F8A7E032FEC85CA3B22A3F4 /* decal_expr_04.png in Resources */ = {isa = PBXBuildFile; fileRef = A15F943B9C39C6F39144BE3A /* decal_expr_04.png */; };
 		3522644EAFA6D100683F2803 /* CharacterEntityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6302A637CB9721ABE4E1EDDE /* CharacterEntityFactory.swift */; };
+		4778757262C19DC12AFF8D55 /* LookDebugBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7B06F80ADD0CC6206C2D7 /* LookDebugBridge.swift */; };
 		48D8C5E21A17A52FA6576C58 /* decal_expr_02.png in Resources */ = {isa = PBXBuildFile; fileRef = DCAE8C3D101C04A9FA03DDB9 /* decal_expr_02.png */; };
 		4B746894631D9EC34E7C3FD2 /* CreatureOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD41240C551D2284DA3930A /* CreatureOverlayView.swift */; };
+		50C0F7FC811C8E5A17F5B21C /* LookDebugElementRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA7340F3698D0BBD3BF6D70 /* LookDebugElementRegistry.swift */; };
 		578E697DF8B4DC832F55464F /* DetectionMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8124956EF295D1AFF592FC3 /* DetectionMatch.swift */; };
 		5F9D7045439D888E80539F94 /* COCOClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984098EA231CA3C9789A1B05 /* COCOClasses.swift */; };
+		61E983F85DB227384CFC7D89 /* LookDebugPageDescribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45D10398302792AA3AE9BF0 /* LookDebugPageDescribing.swift */; };
 		6F7961A592E03169A370D491 /* yolo11s.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 452C729B714DA0474BCFCADE /* yolo11s.mlpackage */; };
 		70A7B66426E5FF6F42FC9E7C /* SurfaceProjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC56B52D3AEA2B430E0A980 /* SurfaceProjector.swift */; };
+		79D564AFFE936E413300587E /* LookDebugBridgeServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26080B74B927CD9173C3A07C /* LookDebugBridgeServer.swift */; };
 		8D5C3E579202376DFB1D7CD8 /* decal_expr_07.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B073989B51580B6D7B6C6D7 /* decal_expr_07.png */; };
 		8EA8AE1747ABE74CBF9E75B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A576FC86A78969C7C77DEAD /* Assets.xcassets */; };
+		90CD0D45BB0213430311D283 /* LookDebugLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487EF4B205C1978815DFE00F /* LookDebugLogStore.swift */; };
 		963C800057D36F93B3186389 /* SceneLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7B26641F9081041AEF4819 /* SceneLine.swift */; };
 		982191B4063C4B72FACEAF71 /* ARLivingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A20A0B33F139509FDB9D3 /* ARLivingView.swift */; };
 		9C8D30C9EB129ADDC5EABA88 /* decal_expr_03.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C52CCF5AC2C11B489F9969 /* decal_expr_03.png */; };
 		A2ADC1FD128B291EC529B78B /* decal_expr_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 94E48DB8BE94A3AD4E08E1F8 /* decal_expr_05.png */; };
 		AAFF70F5A871D037945C3AEB /* decal_expr_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 384272F3B6FDAB45CE69830F /* decal_expr_01.png */; };
+		C293BCB453C151B287665696 /* LookDebugModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C9345CB21CDF31A634DCDA /* LookDebugModels.swift */; };
 		C5132FFC192A8AE937869CCA /* DeepSeekClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8E5E15589513ACE2BE6D5A /* DeepSeekClient.swift */; };
+		C979E69945E46BA1C07B38D9 /* LookDebugRuntimeInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D01345BF525AD4AFDD564 /* LookDebugRuntimeInspector.swift */; };
 		CDFC8E10AF2AC935B55D6C1E /* StatusHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005A42BD300709872C18273E /* StatusHUD.swift */; };
 		D37D228DF6DFAEAA75C8E2EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADECF22036D537A05501A79D /* ContentView.swift */; };
 		DB9C62069F645E706E03F351 /* SpeechBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E7C99E8CC342ADB0E975B3 /* SpeechBubbleView.swift */; };
 		DC678B26F723A6D507881E93 /* LivingObjectSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B6F8699A7CD563ABE3850E /* LivingObjectSystem.swift */; };
+		F2FDA2E2C2285773BBD82FDD /* LookDebugAccessibilityInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7035D2F4590CB1F168453 /* LookDebugAccessibilityInstaller.swift */; };
 		F613BDD6AE184E4969814982 /* decal_expr_06.png in Resources */ = {isa = PBXBuildFile; fileRef = 830C405F1B82DB96CC0E203B /* decal_expr_06.png */; };
 		FCAC434FBA17141F5691275C /* OmniARApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968704FC20728CB055224EB /* OmniARApp.swift */; };
 /* End PBXBuildFile section */
@@ -37,8 +48,13 @@
 		005A42BD300709872C18273E /* StatusHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHUD.swift; sourceTree = "<group>"; };
 		11E7C99E8CC342ADB0E975B3 /* SpeechBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechBubbleView.swift; sourceTree = "<group>"; };
 		1B073989B51580B6D7B6C6D7 /* decal_expr_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = decal_expr_07.png; sourceTree = "<group>"; };
+		26080B74B927CD9173C3A07C /* LookDebugBridgeServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookDebugBridgeServer.swift; sourceTree = "<group>"; };
+		2C0F880B41D65A8F3E554D46 /* LICENSE */ = {isa = PBXFileReference; path = LICENSE; sourceTree = "<group>"; };
+		37C9345CB21CDF31A634DCDA /* LookDebugModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookDebugModels.swift; sourceTree = "<group>"; };
 		384272F3B6FDAB45CE69830F /* decal_expr_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = decal_expr_01.png; sourceTree = "<group>"; };
+		3D48EC2F0FB5E8C91E5C89F1 /* LookDebugActionExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookDebugActionExecutor.swift; sourceTree = "<group>"; };
 		452C729B714DA0474BCFCADE /* yolo11s.mlpackage */ = {isa = PBXFileReference; path = yolo11s.mlpackage; sourceTree = "<group>"; };
+		487EF4B205C1978815DFE00F /* LookDebugLogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookDebugLogStore.swift; sourceTree = "<group>"; };
 		51B6F8699A7CD563ABE3850E /* LivingObjectSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingObjectSystem.swift; sourceTree = "<group>"; };
 		5D295563871C8E0729475571 /* ObjectDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetector.swift; sourceTree = "<group>"; };
 		5F7B26641F9081041AEF4819 /* SceneLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLine.swift; sourceTree = "<group>"; };
@@ -46,21 +62,28 @@
 		6AD41240C551D2284DA3930A /* CreatureOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureOverlayView.swift; sourceTree = "<group>"; };
 		7A576FC86A78969C7C77DEAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		830C405F1B82DB96CC0E203B /* decal_expr_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = decal_expr_06.png; sourceTree = "<group>"; };
+		8C0FDF7B8FC66F2C040BF469 /* LookDebugPageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookDebugPageProvider.swift; sourceTree = "<group>"; };
 		8CB40ECBFAFB361CFA954DBF /* OmniAR.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OmniAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC7B06F80ADD0CC6206C2D7 /* LookDebugBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookDebugBridge.swift; sourceTree = "<group>"; };
 		94E48DB8BE94A3AD4E08E1F8 /* decal_expr_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = decal_expr_05.png; sourceTree = "<group>"; };
 		984098EA231CA3C9789A1B05 /* COCOClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COCOClasses.swift; sourceTree = "<group>"; };
 		A15F943B9C39C6F39144BE3A /* decal_expr_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = decal_expr_04.png; sourceTree = "<group>"; };
+		A4A7035D2F4590CB1F168453 /* LookDebugAccessibilityInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookDebugAccessibilityInstaller.swift; sourceTree = "<group>"; };
 		AD2E01867A4CD909FD7E6891 /* omni_creature.riv */ = {isa = PBXFileReference; path = omni_creature.riv; sourceTree = "<group>"; };
 		AD8E5E15589513ACE2BE6D5A /* DeepSeekClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepSeekClient.swift; sourceTree = "<group>"; };
 		ADECF22036D537A05501A79D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AFC56B52D3AEA2B430E0A980 /* SurfaceProjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfaceProjector.swift; sourceTree = "<group>"; };
+		D45D10398302792AA3AE9BF0 /* LookDebugPageDescribing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookDebugPageDescribing.swift; sourceTree = "<group>"; };
 		D8124956EF295D1AFF592FC3 /* DetectionMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionMatch.swift; sourceTree = "<group>"; };
 		DCAE8C3D101C04A9FA03DDB9 /* decal_expr_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = decal_expr_02.png; sourceTree = "<group>"; };
 		E968704FC20728CB055224EB /* OmniARApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmniARApp.swift; sourceTree = "<group>"; };
 		EA0A20A0B33F139509FDB9D3 /* ARLivingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARLivingView.swift; sourceTree = "<group>"; };
 		EA669FE566CA57B1814A119A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EAA7340F3698D0BBD3BF6D70 /* LookDebugElementRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookDebugElementRegistry.swift; sourceTree = "<group>"; };
 		F2C52CCF5AC2C11B489F9969 /* decal_expr_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = decal_expr_03.png; sourceTree = "<group>"; };
-		"TEMP_CC866409-FAE6-479D-BE11-68A41D563330" /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		F80D01345BF525AD4AFDD564 /* LookDebugRuntimeInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookDebugRuntimeInspector.swift; sourceTree = "<group>"; };
+		FA9E5781447EECDD56DB1EB4 /* LookDebugBridgeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookDebugBridgeRouter.swift; sourceTree = "<group>"; };
+		"TEMP_8750FC86-8899-4380-9D1E-FF728615B85F" /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -112,6 +135,25 @@
 			path = LLM;
 			sourceTree = "<group>";
 		};
+		7CC4844F05A3F663DB185C59 /* DebugBridge */ = {
+			isa = PBXGroup;
+			children = (
+				2C0F880B41D65A8F3E554D46 /* LICENSE */,
+				A4A7035D2F4590CB1F168453 /* LookDebugAccessibilityInstaller.swift */,
+				3D48EC2F0FB5E8C91E5C89F1 /* LookDebugActionExecutor.swift */,
+				8CC7B06F80ADD0CC6206C2D7 /* LookDebugBridge.swift */,
+				FA9E5781447EECDD56DB1EB4 /* LookDebugBridgeRouter.swift */,
+				26080B74B927CD9173C3A07C /* LookDebugBridgeServer.swift */,
+				EAA7340F3698D0BBD3BF6D70 /* LookDebugElementRegistry.swift */,
+				487EF4B205C1978815DFE00F /* LookDebugLogStore.swift */,
+				37C9345CB21CDF31A634DCDA /* LookDebugModels.swift */,
+				D45D10398302792AA3AE9BF0 /* LookDebugPageDescribing.swift */,
+				8C0FDF7B8FC66F2C040BF469 /* LookDebugPageProvider.swift */,
+				F80D01345BF525AD4AFDD564 /* LookDebugRuntimeInspector.swift */,
+			);
+			path = DebugBridge;
+			sourceTree = "<group>";
+		};
 		7E02F956B85DDC8942F6507C /* DecalFlat */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +184,7 @@
 				EA669FE566CA57B1814A119A /* Info.plist */,
 				E968704FC20728CB055224EB /* OmniARApp.swift */,
 				31974A39DD73A5CC8EA2B153 /* AR */,
+				7CC4844F05A3F663DB185C59 /* DebugBridge */,
 				5BC01E59B448190229E9DFC3 /* Detection */,
 				7AB8580F94157D059E0219F2 /* LLM */,
 				A24F9A394D25B26A3819AAA4 /* Models */,
@@ -168,10 +211,10 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		"TEMP_272AF1A9-7BAC-432F-95B8-A5300BEC7D05" /* onmi */ = {
+		"TEMP_8CDE7866-5B73-4B58-AFD8-5FB3D81F4F78" /* onmi */ = {
 			isa = PBXGroup;
 			children = (
-				"TEMP_CC866409-FAE6-479D-BE11-68A41D563330" /* Secrets.xcconfig */,
+				"TEMP_8750FC86-8899-4380-9D1E-FF728615B85F" /* Secrets.xcconfig */,
 			);
 			path = onmi;
 			sourceTree = "<group>";
@@ -207,7 +250,7 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					5D1FD4B437E7CEA359C93149 = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = S5T9698YCM;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -263,6 +306,17 @@
 				C5132FFC192A8AE937869CCA /* DeepSeekClient.swift in Sources */,
 				578E697DF8B4DC832F55464F /* DetectionMatch.swift in Sources */,
 				DC678B26F723A6D507881E93 /* LivingObjectSystem.swift in Sources */,
+				F2FDA2E2C2285773BBD82FDD /* LookDebugAccessibilityInstaller.swift in Sources */,
+				25EE7C67BFAD3342855713A9 /* LookDebugActionExecutor.swift in Sources */,
+				4778757262C19DC12AFF8D55 /* LookDebugBridge.swift in Sources */,
+				05F58F6D5FFD4A43ABE76E30 /* LookDebugBridgeRouter.swift in Sources */,
+				79D564AFFE936E413300587E /* LookDebugBridgeServer.swift in Sources */,
+				50C0F7FC811C8E5A17F5B21C /* LookDebugElementRegistry.swift in Sources */,
+				90CD0D45BB0213430311D283 /* LookDebugLogStore.swift in Sources */,
+				C293BCB453C151B287665696 /* LookDebugModels.swift in Sources */,
+				61E983F85DB227384CFC7D89 /* LookDebugPageDescribing.swift in Sources */,
+				22C456EFB3BDA36B43E76A0C /* LookDebugPageProvider.swift in Sources */,
+				C979E69945E46BA1C07B38D9 /* LookDebugRuntimeInspector.swift in Sources */,
 				2756797E2B71A328D794ADC9 /* ObjectDetector.swift in Sources */,
 				FCAC434FBA17141F5691275C /* OmniARApp.swift in Sources */,
 				963C800057D36F93B3186389 /* SceneLine.swift in Sources */,
@@ -278,7 +332,7 @@
 /* Begin XCBuildConfiguration section */
 		2CC1E8EDE3B567B1D5DA429A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = "TEMP_CC866409-FAE6-479D-BE11-68A41D563330" /* Secrets.xcconfig */;
+			baseConfigurationReference = "TEMP_8750FC86-8899-4380-9D1E-FF728615B85F" /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -286,11 +340,12 @@
 				COREML_CODEGEN_LANGUAGE = Swift;
 				COREML_COMPILER_CONTAINER = "bundle-resources";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = S5T9698YCM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OmniAR/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = OmniAR;
 				INFOPLIST_KEY_NSCameraUsageDescription = "OmniAR uses the camera for AR world tracking and object detection.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "OmniAR (Debug) exposes a local debug bridge for AI-assisted inspection.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "OmniAR may use the microphone for future voice interaction.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -373,7 +428,7 @@
 		};
 		60D60EF780F596983B91FD0A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = "TEMP_CC866409-FAE6-479D-BE11-68A41D563330" /* Secrets.xcconfig */;
+			baseConfigurationReference = "TEMP_8750FC86-8899-4380-9D1E-FF728615B85F" /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -381,11 +436,12 @@
 				COREML_CODEGEN_LANGUAGE = Swift;
 				COREML_COMPILER_CONTAINER = "bundle-resources";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = S5T9698YCM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OmniAR/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = OmniAR;
 				INFOPLIST_KEY_NSCameraUsageDescription = "OmniAR uses the camera for AR world tracking and object detection.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "OmniAR (Debug) exposes a local debug bridge for AI-assisted inspection.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "OmniAR may use the microphone for future voice interaction.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
